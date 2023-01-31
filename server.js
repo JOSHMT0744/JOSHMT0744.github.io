@@ -1,8 +1,8 @@
 const app = require('./app.js');
 
-const hostname = 'josh-thompson.co.uk';
-const port = 21;
+const hostname = '127.0.0.1';
+const port = 8080;
 
-app.listen (hostname, () => {
-   console.log(`Server running at http://${hostname}/`);
+app.listen (port, hostname, () => {
+   console.log(`Server running at http://${hostname}:${port}/`);
 });

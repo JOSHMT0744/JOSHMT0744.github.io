@@ -2,7 +2,7 @@
   "name": "personal-website",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "./client/assets/js/front.js",
   "scripts": {
     "compile:sass": "sass --watch scss:assets/css",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -11,14 +11,18 @@
   "author": "Joshua Thompson",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.20",
-    "sass": "^1.57.1"
+    "nodemon": "^2.0.20"
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^6.2.1",
     "autoprefixer": "^10.4.13",
+    "body-parser": "^1.20.1",
     "bootstrap": "^5.2.3",
+    "emailjs": "^4.0.1",
     "express": "^4.18.2",
-    "postcss-cli": "^10.1.0"
+    "nodemailer": "^6.9.1",
+    "postcss-cli": "^10.1.0",
+    "sass": "^1.57.1",
+    "smtpjs": "^0.0.1"
   }
 }

@@ -1,24 +1,5 @@
 /* Description: Custom JS file */
 
-/* Navigation*/
-// Collapse the navbar by adding the top-nav-collapse class
-window.onscroll = async function () {
-	await scrollFunction();
-	await scrollFunctionBTT(); // back to top button
-};
-
-window.onload = async function () {
-	await scrollFunction();
-};
-
-async function scrollFunction() {
-	if (document.documentElement.scrollTop > 30) {
-		document.getElementById("navbar").classList.add("top-nav-collapse");
-	} else if ( document.documentElement.scrollTop < 30 ) {
-		document.getElementById("navbar").classList.remove("top-nav-collapse");
-	}
-}
-
 // Hover on desktop
 async function toggleDropdown(e) {
 	const _d = await e.target.closest(".dropdown");
@@ -36,55 +17,6 @@ async function toggleDropdown(e) {
 	);
 }
 
-
-/* Card Slider - Swiper */
-let cardSlider = new Swiper('.card-slider', {
-	autoplay: {
-		delay: 4000,
-		disableOnInteraction: false
-	},
-	loop: true,
-	navigation: {
-		nextEl: '.swiper-button-next',
-		prevEl: '.swiper-button-prev'
-	}
-});
-
-
-/* Back To Top Button */
-// Get the button
-myButton = document.getElementById("myBtn");
-
-// When the user scrolls down 20px from the top of the document, show the button
-async function scrollFunctionBTT() {
-	if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
-		myButton.style.display = "block";
-	} else {
-		myButton.style.display = "none";
-	}
-}
-
-// When the user clicks on the button, scroll to the top of the document
-async function topFunction() {
-	document.body.scrollTop = 0; // for Safari
-	document.documentElement.scrollTop = 0; // for Chrome, Firefox, IE and Opera
-}
-       // Scroll to top button appear
-       document.addEventListener('scroll', async () => {
-         const scrollToTop = document.body.querySelector('.scroll-to-top');
-         if (document.documentElement.scrollTop > 100) {
-             if (!scrollToTopVisible) {
-                 await fadeIn(scrollToTop);
-                 scrollToTopVisible = true;
-             }
-         } else {
-             if (scrollToTopVisible) {
-                 fadeOut(scrollToTop);
-                 scrollToTopVisible = false;
-             }
-         }
-     });
-
 // My Custom JS
 async function listeners () {
    await frontTextUpdate();
@@ -95,20 +27,6 @@ async function listeners () {
    document.querySelector(".navbar-toggler").addEventListener("click", () => {
       document.querySelector(".offcanvas-collapse").classList.toggle("open");
  });
-
- 
-	// On click
-	document.querySelector(".dropdown").addEventListener("click", async (e) => {
-		const _d = await e.target.closest(".dropdown");
-		let _m = document.querySelector(".dropdown-menu", await _d);
-		if (await _d.classList.contains("show")) {
-			_m.classList.remove("show");
-			await _d.classList.remove("show");
-		} else {
-			_m.classList.add("show");
-			await _d.classList.add("show");
-		}
-	});
 
  // Navbar on mobile
 let elements = document.querySelectorAll(".nav-link:not(.dropdown-toggle)");
@@ -126,16 +44,42 @@ for (let i = 0; i < elements.length; i++) {
       const today  = new Date()
       let currHour =  today.getHours(); // https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously
       let updatedText;
-      console.log(currHour);
    
       if (currHour < 12) {
          updatedText = 'Good morning, I\'m Josh!';
+      } else if (currHour >= 18) {
+         updatedText = 'Good evening, I\'m Josh!';
       } else {
-         updatedText = 'Good afternoon, I\'m Josh!';
-      }
+			updatedText = 'Good afternoon, I\'m Josh!';
+		}
    
       welcomeTextMain.innerHTML = updatedText;
    }
 
+async function formListeners () {
+	const form = document.querySelector('#contactForm');
+
+	form.addEventListener('submit', async (event) => {
+		event.preventDefault();
+		const formData = new FormData(form);
+		const formDataEntries = JSON.stringify(Object.fromEntries(formData));
+		try {
+			const returnedData = await fetch('/sendEmail', {
+				method: 'POST',
+				headers: {
+					'content-Type': 'application/json'
+				},
+				body: formDataEntries
+			});
+			// console.log(await returnedData.text());
+		} catch (error) {
+			throw (error);
+		}
+	
+	})
+	
+}
+
 
 document.addEventListener('DOMContentLoaded', listeners);
+document.addEventListener('DOMContentLoaded', formListeners);
