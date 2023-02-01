@@ -1,22 +1,5 @@
 /* Description: Custom JS file */
 
-// Hover on desktop
-async function toggleDropdown(e) {
-	const _d = await e.target.closest(".dropdown");
-	let _m = document.querySelector(".dropdown-menu", _d);
-
-	setTimeout(
-		async function () {
-		const shouldOpen = await _d.matches(":hover");
-		_m.classList.toggle("show", await shouldOpen);
-		await _d.classList.toggle("show", await shouldOpen);
-
-		await _d.setAttribute("aria-expanded", await shouldOpen);
-		},
-		e.type === "mouseleave" ? 300 : 0
-	);
-}
-
 // My Custom JS
 async function listeners () {
    await frontTextUpdate();
