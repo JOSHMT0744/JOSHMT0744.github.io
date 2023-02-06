@@ -1,9 +1,12 @@
+$purple: #16084b;
+$pink: #cc2973;
+
 //Customised colours
 
-$light:      #e0e8f6;
+$light:      rgb(223, 232, 246);
 $dark:       #001532;
-$primary:    #052f69;
-$secondary:  #71669e;
+$primary:    $purple;
+$secondary:  $pink;
 $info:       #15b9ea;
 $success:    #05a15c;
 $warning:    #e1ca05;
