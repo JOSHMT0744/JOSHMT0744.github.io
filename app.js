@@ -19,7 +19,7 @@ app.use(express.static(path.join(__dirname)));
       }
    });
 
-app.post('/sendEmail', (req, resp) => {
+app.post('https://www.josh-thompson.co.uk/sendEmail', (req, resp) => {
    try {
       const data = req.body;
       console.log(data);
