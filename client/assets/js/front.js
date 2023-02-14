@@ -47,7 +47,7 @@ async function formListeners () {
 		const formData = new FormData(form);
 		const formDataEntries = JSON.stringify(Object.fromEntries(formData));
 		try {
-			const returnedData = await fetch('/sendEmail', {
+			const returnedData = await fetch('https://www/josh-thompson.co.uk/sendEmail', {
 				method: 'POST',
 				headers: {
 					'content-Type': 'application/json'
