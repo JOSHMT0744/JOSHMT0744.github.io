@@ -47,14 +47,18 @@ async function formListeners () {
 		const formData = new FormData(form);
 		const formDataEntries = JSON.stringify(Object.fromEntries(formData));
 		try {
-			const returnedData = await fetch('https://www.josh-thompson.co.uk/sendEmail', {
+			const urlObj = new URL('https://www.josh-thompson.co.uk/sendEmail');
+			// console.log(urlObj.pathname);
+			// console.log(formDataEntries);
+			const returnedData = await fetch(urlObj.pathname, {
 				method: 'POST',
 				headers: {
 					'content-Type': 'application/json'
 				},
 				body: formDataEntries
+				// mode: 'no-cors'
 			});
-			// console.log(await returnedData.text());
+			// console.log(await returnedData.json());
 		} catch (error) {
 			throw (error);
 		}

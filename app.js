@@ -19,22 +19,22 @@ app.use(express.static(path.join(__dirname)));
       }
    });
 
-app.post('https://www.josh-thompson.co.uk/sendEmail', (req, resp) => {
+app.post('/sendEmail', (req, resp) => {
+   const data = req.body;
+   // console.log(data);
+   const name = data.name;
+   const email = data.email;
+   const message = data.message;
+   console.log(name, email, message);
+
+   const mailDetails = {
+      from: 'josht200@live.com',
+      to: 'lcbc28@durham.ac.uk',
+      subject: data.name,
+      text: `Email: ${data.email} \n Message: ${data.message}`
+   };
+
    try {
-      const data = req.body;
-      console.log(data);
-      const name = data.name;
-      const email = data.email;
-      const message = data.message;
-      console.log(name, email, message);
-   
-      const mailDetails = {
-         from: 'josht200@live.com',
-         to: 'lcbc28@durham.ac.uk',
-         subject: data.name,
-         text: `Email: ${data.email} \n Message: ${data.message}`
-      };
-   
       transporter.sendMail(mailDetails, function (err, data) {
          if (err) {
             console.log('Error occurs ' + err.message);
@@ -45,9 +45,7 @@ app.post('https://www.josh-thompson.co.uk/sendEmail', (req, resp) => {
    } catch (err) {
       throw err;
    }
-   
-
-   resp.send('Ok');
+   resp.send(mailDetails);
 });
 
 
