@@ -10,9 +10,9 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname)));
 app.use(function(req, res, next) { // Thank you ChatGPT
-   res.setHeader("Access-Control-Allow-Origin", "*");
+   // res.setHeader("Access-Control-Allow-Origin", "*");
    res.setHeader("Access-Control-Allow-Methods", "POST");
-   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+   // res.setHeader("Access-Control-Allow-Headers", "Content-Type");
    next();
  });
  
@@ -21,8 +21,8 @@ app.use(function(req, res, next) { // Thank you ChatGPT
    let transporter = nodemailer.createTransport({
       service: 'hotmail',
       auth: {
-         user: 'josht200@live.com',
-         pass: 'hoL9@ghy'
+         user: 'joshthompsonwebsite@outlook.com',
+         pass: 'Jdnco08876&@'
       }
    });
 
@@ -35,7 +35,7 @@ app.post('/sendEmail', (req, resp) => {
    console.log(name, email, message);
 
    const mailDetails = {
-      from: 'josht200@live.com',
+      from: 'joshthompsonwebsite@outlook.com',
       to: 'lcbc28@durham.ac.uk',
       subject: data.name,
       text: `Email: ${data.email} \n Message: ${data.message}`
