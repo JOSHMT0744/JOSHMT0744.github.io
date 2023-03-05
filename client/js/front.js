@@ -1,3 +1,4 @@
+/* eslint-disable no-tabs */
 /* eslint-disable no-useless-catch */
 /* eslint-disable no-undef */
 /* Description: Custom JS file */
@@ -14,7 +15,7 @@ async function listeners () {
  });
 
  // Navbar on mobile
-let elements = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
+const elements = document.querySelectorAll('.nav-link:not(.dropdown-toggle)');
 
 for (let i = 0; i < elements.length; i++) {
 	elements[i].addEventListener('click', async () => {
@@ -25,10 +26,10 @@ for (let i = 0; i < elements.length; i++) {
 
    async function frontTextUpdate () {
       const welcomeTextMain = document.querySelector('#welcomeTextMain');
-      const today  = new Date()
-      let currHour =  today.getHours(); // https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously
+      const today = new Date();
+      const currHour = today.getHours(); // https://stackoverflow.com/questions/7188145/call-a-javascript-function-every-5-seconds-continuously
       let updatedText;
-   
+
       if (currHour < 12) {
          updatedText = 'Good morning, I\'m Josh!';
       } else if (currHour >= 18) {
@@ -36,7 +37,7 @@ for (let i = 0; i < elements.length; i++) {
       } else {
 			updatedText = 'Good afternoon, I\'m Josh!';
 		}
-   
+
       welcomeTextMain.innerHTML = updatedText;
    }
 
@@ -63,9 +64,7 @@ async function formListeners () {
 		} catch (error) {
 			throw (error);
 		}
-	
-	})
-	
+	});
 }
 
 document.addEventListener('DOMContentLoaded', listeners);

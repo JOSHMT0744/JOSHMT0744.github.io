@@ -1,8 +1,8 @@
 {
   "name": "personal-website",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "A personal website about my interests and studies",
+  "main": "./client/js/front.js",
   "scripts": {
     "compile:sass": "sass --watch scss:client/css",
     "test": "echo \"Error: no test specified\" && exit 1",
