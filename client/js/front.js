@@ -41,14 +41,25 @@ for (let i = 0; i < elements.length; i++) {
       welcomeTextMain.innerHTML = updatedText;
    }
 
+async function sendEmail (formData) {
+	const email = await formData.get('email');
+	const name = await formData.get('name');
+	const message = await formData.get('message');
+
+	const mailLink = `mailto:joshthompsonwebsite@outlook.com?subject=${encodeURIComponent(email)}&body=${encodeURIComponent(name)}%0D%0A${encodeURIComponent(message)}`;
+	window.location.href = mailLink;
+}
+
 async function formListeners () {
 	const form = document.querySelector('#contactForm');
 
 	form.addEventListener('submit', async (event) => {
 		event.preventDefault();
 		const formData = new FormData(form);
-		const formDataEntries = JSON.stringify(Object.fromEntries(formData));
+		// const formDataEntries = JSON.stringify(Object.fromEntries(formData));
 		try {
+			await sendEmail(formData);
+			/*
 			const urlObj = new URL('https://www.josh-thompson.co.uk/api/email/sendEmail');
 			console.log(urlObj.pathname);
 			console.log(formDataEntries);
@@ -61,6 +72,7 @@ async function formListeners () {
 			});
 			console.log('done');
 			console.log(await returnedData.json());
+			*/
 		} catch (error) {
 			throw (error);
 		}
