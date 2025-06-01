@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import "./Contact.css"
-import loc from "../../Assets/gps.png"
-import mail from "../../Assets/email.png"
+import loc from "../../assets/gps.png"
+import mail from "../../assets/email.png"
 
 const Contact = () => {
    const [, setResult] = useState("");
