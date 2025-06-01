@@ -1,0 +1,81 @@
+.footer{
+   margin: 50px 170px;
+   display: flex;
+   flex-direction: column;
+   gap: 30px;
+}
+
+.footer-top{
+   display: flex;
+   justify-content: space-between;
+}
+
+.footer-top-left p{
+   font-size: 20px;
+   max-width: 400px; 
+}
+
+.footer-top-right{
+   display: flex;
+   align-items: center;
+   gap: 35px;
+}
+
+.footer-email-input{
+   display: flex;
+   gap: 30px;
+   padding: 20px 30px;
+   border-radius: 50px;
+   background: #F8F8FF;
+   padding-right: 80px;
+}
+
+.footer-email-input input{
+   outline: none;
+   border: none;
+   background: transparent;
+   color: #32323B;
+   font-family: "Cabin", sans-serif;
+   font-size: 18px;
+}
+
+.footer-subscribe{
+   font-size: 20px;
+   padding: 22px 50px;
+   border-radius: 50px;
+}
+
+.footer-bottom{
+   display: flex;
+   justify-content: space-between;
+   font-size: 18px;
+}
+
+.footer-bottom-right{
+   display: flex;
+   gap: 50px;
+   margin-bottom: 50px;
+   text-decoration: none;
+}
+.footer-bottom-right a{
+   color: #32323B;
+   text-decoration: none;
+}
+.footer-bottom-right a:hover{
+   color: #537895;
+}
+
+@media(max-width: 768px) {
+   .footer{
+      margin: 50px 70px;
+   }
+   .footer-top{
+      flex-direction: column;
+      gap: 50px;
+   }
+   .footer-bottom{
+      display: flex;
+      flex-direction: column-reverse;
+      margin-bottom: 50px;
+   }
+}

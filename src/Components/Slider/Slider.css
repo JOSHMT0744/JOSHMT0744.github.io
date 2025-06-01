@@ -1,0 +1,26 @@
+.slider-title h1{
+   font-size: 50px;
+      padding: 0;
+}
+
+.card{
+   margin: 0 20px;
+   overflow: hidden;
+   text-align: center;
+}
+
+.container {
+   justify-content: center;
+   align-items: center;
+   width: 70%;
+   margin: 0 auto;
+   width: 70%;
+   padding: 40px 0;
+}
+
+img {
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   padding: 20px
+}
