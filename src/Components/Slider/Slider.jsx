@@ -59,8 +59,8 @@ function CenterMode() {
          <div className="card">
             <img src={reading} alt="reading a book" className="w-100"/>
             <div className="card-body">
-               <h3>Slick</h3>
-               <p>Check out what I've been reading - <a href="https://josh-thompson.notion.site/Book-Notes-76f9e844ac7f460d8ece2b791dcc46a6">Here</a></p>
+               <h3>My library 📚</h3>
+               <p>Check out what I&#39;ve been reading - <a href="https://josh-thompson.notion.site/Book-Notes-76f9e844ac7f460d8ece2b791dcc46a6">Here</a></p>
             </div>
          </div>
          </Slider>
