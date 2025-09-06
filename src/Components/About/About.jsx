@@ -1,7 +1,7 @@
 import React from "react"
 import "./About.css"
-//import swing_pic from "../../assets/swing_img.jpg"
-import josh_pic from "../../assets/josh.webp"
+import josh_pic from "../../assets/swing_img.jpg"
+//import josh_pic from "../../assets/josh.webp"
 
 
 const About = () => {
