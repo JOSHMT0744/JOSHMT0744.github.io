@@ -3,14 +3,14 @@ import AnchorLink from "react-anchor-link-smooth-scroll"
 import "./Hero.css"
 import cv from "../../assets/Joshua_Thompson_CV.pdf"
 import spain_photo from "../../assets/profile_photo.webp"
-import beach_run from "../../assets/beach_run.webp"
+import me_intro from "../../assets/me_intro.png"
 
 const Hero = () => {
    return (
       <div id="home" className="hero">
          <div className="hover-fade-container">
             <img src={spain_photo} alt="personal profile image" className="fade-img base" />
-            <img src={beach_run} alt="second personal profile image" className="fade-img overlay" />
+            <img src={me_intro} alt="second personal profile image" className="fade-img overlay" />
          </div>
          <h1><span>Hi, I'm Josh!</span></h1>
          <p>This personal portfolio website is my attempt to display all of my hobbies, interests and projects!</p>
