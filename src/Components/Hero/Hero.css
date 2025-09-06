@@ -74,6 +74,31 @@
    text-decoration: none;
 }
 
+.hover-fade-container {
+   position: relative;
+   overflow: hidden;
+}
+.fade-img {
+   position: absolute;
+   width: 100%;
+   height: 100%;
+   object-fit: cover;
+   transition: opacity 0.5s ease-in-out;
+}
+/* Default image (always visible) */
+.fade-img.base {
+   z-index: 1;
+   opacity: 1;
+}
+/* Hover image (fades in on hover) */
+.fade-img.overlay {
+   z-index: 2;
+   opacity: 2;
+}
+.hover-fade-container:hover .fade-img.overlay {
+   opacity: 1;
+}
+
 @media(max-width:768px){
    .hero img{
       margin-bottom: 5%;
