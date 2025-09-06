@@ -5,7 +5,7 @@ import "slick-carousel/slick/slick-theme.css";
 import "./Slider.css";
 import piano from "../../assets/slider/piano.webp";
 import devpost from "../../assets/slider/devpost.webp";
-import reading from "../../assets/slider/reading.webp";
+import reading from "../../assets/slider/reading.jpg";
 
 function CenterMode() {
    const settings = {
