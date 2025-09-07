@@ -86,16 +86,16 @@
    transition: opacity 0.5s ease-in-out;
 }
 /* Default image (always visible) */
-.fade-img.base {
+.base {
    z-index: 1;
    opacity: 1;
 }
 /* Hover image (fades in on hover) */
-.fade-img.overlay {
+.overlay {
    z-index: 2;
-   opacity: 2;
+   opacity: 0;
 }
-.hover-fade-container:hover .fade-img.overlay {
+.hover-fade-container:hover .overlay {
    opacity: 1;
 }
 
