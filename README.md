@@ -1,55 +1,56 @@
-<img src="public/preview.png" />
+# Josh Thompson — Personal Portfolio
 
-# Windowed portfolio
+A neobrutalism-styled personal portfolio and project showcase, built with Next.js and Tailwind CSS. The site presents my background, experience, and projects in a bold, windowed layout that works across desktop, tablet, and phone viewports.
 
-Windowed portfolio is a neobrutalism-styled nextjs tailwind template for portfolios.
+## What’s on the site
+
+- **Home** — Short intro, profile photo, and links to Gmail, GitHub, LinkedIn, and Armature Labs. Tabbed sections:
+  - **About Me** — Favourite words and phrases (values and quotes).
+  - **Education & Experience** — MSci Maths & Computer Science (Durham), interests in autonomous systems, RL, and Bayesian statistics; hover cards for societal positions (e.g. VM Tennis, Hockey, Lacrosse) and volunteering (Code Club); an infinite **marquee** of roles and employers (e.g. Data Consultant/Engineer/Scientist, Co-Founder at Armature Labs) with company logos.
+  - **Contact Me** — Email, LinkedIn profile, and location (London).
+- **Projects** — Scrollable list of projects (Armature Labs, Entropy-Regularised IoT, MerlinPDF, Grade 8 Piano) with preview images, descriptions, and optional “Visit” / “Github” links. Layout and buttons adapt when a project has only one link.
+- **Layout** — Fixed “window” (max width 1000px), sidebar with name on larger screens, top nav (Home, Projects, theme toggle). Responsive so the window uses full width on small screens and tabs/lists stack on narrow viewports.
+
+## Tech stack
+
+- **Next.js** (App Router)
+- **Tailwind CSS** (custom breakpoints, theme)
+- **Radix UI** (Tabs, Hover Card, etc.)
+- **next-themes** for light/dark mode
+- Icons: **Simple Icons**, **Lucide**, custom (e.g. Armature Labs, star)
 
 ## Get started
 
-[Create a new repo](https://github.com/neobrutalism-templates/windowed-portfolio/generate) from this template.
+### Install and run
 
-### Installation
-
-This template uses `pnpm` package manager so make sure you have it installed.
-
-To install all dependencies run:
+This project uses **pnpm**. Install dependencies and run the dev server:
 
 ```bash
 pnpm i
-```
-
-To run the app locally:
-
-```bash
 pnpm run dev
 ```
 
-### Config
+Open [http://localhost:3000](http://localhost:3000) to view the site.
 
-- Inside `layout.tsx` update the metadata
-- Inside `page.tsx` update the content
-- Update the `favicon.ico`
+### Build
 
-### Content config
-
-#### Links on the home page
-
-To update the links on the home page go to `src/app/page.tsx` and inside `links` array add or remove objects. Each object has 2 properties, `icon`, and `href`. `href` is self-explanatory, and inside `icon` you'll put an icon imported from `@icons-pack/react-simple-icons`. Visit [simpleicons.org](https://simpleicons.org/) to see all the icons. Import them by adding `Si` prefix to their name as I imported them in `links` component.
-
-#### Updating the `previewImage` in `src/app/work/page.tsx`
-
-Make sure to put `/` + name of the picture that's inside public folder. e.g. you have a `my-project.png` picture inside `public` folder, you'll type:
-
-```ts
-previewImage: '/my-project.png'
+```bash
+pnpm run build
+pnpm start
 ```
 
-##### Image aspect ratio
+## Project structure (high level)
 
-Inside `app/work/page.tsx` `previewImage` is wrapped inside AspectRatio component. Change the `ratio` prop so it suits your needs (default preview images are 600 x 300, so I set the ratio to be `2 / 1`).
+- `src/app/` — App Router: `layout.tsx`, `page.tsx` (home), `work/page.tsx` (projects).
+- `src/components/` — Nav, theme provider, UI primitives (tabs, hover-card, image-card, label, marquee, etc.), icons and stars.
+- `public/` — Static assets (images, logos, SVGs).
+- Styling: `src/app/globals.css` (theme, keyframes), `tailwind.config.ts` (screens, animations).
 
-### Styling
+## Customisation
 
-To change the styling visit [styling docs](https://neobrutalism.dev/styling), and copy the desired styling to your css like it's shown in the styling docs.
+- **Site metadata** — Edit `src/app/layout.tsx` (e.g. `metadata.title`).
+- **Home content** — Update copy, links, marquee items, and tab content in `src/app/page.tsx`.
+- **Projects** — Edit the `PROJECTS` array in `src/app/work/page.tsx` (name, description, `previewImage`, `liveLink`, `repoUrl`). Use `/filename` for images in `public/`.
+- **Styling** — Adjust colours and tokens in `src/app/globals.css`; extend breakpoints or animations in `tailwind.config.ts`.
 
-I didn't add custom font weights for this template since I think it's best that way.
+Based on the [windowed portfolio](https://github.com/neobrutalism-templates/windowed-portfolio) template (neobrutalism). Styling ideas: [neobrutalism.dev](https://www.neobrutalism.dev/).
