@@ -1,13 +1,16 @@
 {
   "name": "nextjs-starter-template",
   "version": "0.1.0",
+  "homepage": "https://josh-thompson.co.uk",
   "private": true,
   "type": "module",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "predeploy": "next build",
+    "deploy": "gh-pages -b main -d out"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^9.4.1",
@@ -33,6 +36,7 @@
     "eslint": "^8",
     "eslint-config-next": "15.2.4",
     "eslint-config-prettier": "^9.1.0",
+    "gh-pages": "^6.3.0",
     "postcss": "^8",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.6.11",

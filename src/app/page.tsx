@@ -99,7 +99,7 @@ export default function Home() {
         <div className="min-w-0 flex-1">
           <p>
             Good {new Date().getHours() < 12 ? 'morning' : new Date().getHours() < 18 ? 'afternoon' : 'evening'}!
-            It's great to have you here {String.fromCodePoint(0x1F642)}
+            It&apos;s great to have you here {String.fromCodePoint(0x1F642)}
           </p>
 
           <br />
@@ -235,7 +235,7 @@ export default function Home() {
           </div>
         </TabsContent>
         <TabsContent value="contactme">
-          <h3 className="font-heading text-lg w400:text-base font-bold">LET'S CONNECT</h3>
+          <h3 className="font-heading text-lg w400:text-base font-bold">LET&apos;S CONNECT</h3>
           <p className="mt-4 w400:text-base">It has been a pleasure to have you here. Below are my contact details. I look forward to continuing the conversation</p>
           <div className="mb-8 mt-4 space-y-4">
             <div className="flex min-w-0 flex-wrap items-center gap-3 w400:gap-2">
