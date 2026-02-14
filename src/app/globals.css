@@ -1,0 +1,82 @@
+@import 'tailwindcss';
+@import 'tw-animate-css';
+
+@config '../../tailwind.config.ts';
+
+@custom-variant dark (&:is(.dark *));
+
+:root {
+  --background: oklch(92.13% 0.0388 282.36);
+  --secondary-background: oklch(100% 0 0);
+  --foreground: oklch(0% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(66.34% 0.1806 277.2);
+  --border: oklch(0% 0 0);
+  --ring: oklch(0% 0 0);
+  --overlay: oklch(0% 0 0 / 0.8);
+  --shadow: 4px 4px 0px 0px var(--border);
+}
+
+.dark {
+  --background: oklch(26.58% 0.0737 283.96);
+  --secondary-background: oklch(23.93% 0 0);
+  --foreground: oklch(92.49% 0 0);
+  --main-foreground: oklch(0% 0 0);
+  --main: oklch(66.34% 0.1806 277.2);
+  --border: oklch(0% 0 0);
+  --ring: oklch(100% 0 0);
+  --shadow: 4px 4px 0px 0px var(--border);
+}
+
+@theme inline {
+  --color-main: var(--main);
+  --color-background: var(--background);
+  --color-secondary-background: var(--secondary-background);
+  --color-foreground: var(--foreground);
+  --color-main-foreground: var(--main-foreground);
+  --color-border: var(--border);
+  --color-overlay: var(--overlay);
+  --color-ring: var(--ring);
+
+  --spacing-boxShadowX: 4px;
+  --spacing-boxShadowY: 4px;
+  --spacing-reverseBoxShadowX: -4px;
+  --spacing-reverseBoxShadowY: -4px;
+  --radius-base: 5px;
+  --shadow-shadow: var(--shadow);
+  --font-weight-base: 500;
+  --font-weight-heading: 700;
+}
+
+:root {
+  --sb-track-color: #ffffff;
+  --sb-thumb-color: #000000;
+}
+
+body {
+  @apply bg-secondary-background flex min-h-[100dvh] w-full items-center justify-center font-bold selection:bg-black selection:text-white portrait:h-[100dvh];
+}
+
+.main::-webkit-scrollbar {
+  width: 16px;
+}
+
+.main::-webkit-scrollbar-track {
+  background: var(--sb-track-color);
+}
+
+.main::-webkit-scrollbar-thumb {
+  background: var(--sb-thumb-color);
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .main {
+    scrollbar-color: var(--sb-thumb-color) var(--sb-track-color);
+  }
+}
+
+@media (max-width: 400px) {
+  .main {
+    max-height: calc(100dvh - 40px) !important;
+  }
+}
