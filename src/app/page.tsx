@@ -106,14 +106,6 @@ export default function Home() {
 
           <p>
             I want to show you around all my favourite hobbies, interests and projects.{' '}
-            <a
-              className="font-bold underline"
-              target="_blank"
-              href="https://github.com/neobrutalism-templates/windowed-portfolio"
-            >
-              github repo
-            </a>{' '}
-            for more info.
           </p>
 
           <div className="mr-auto mt-5 flex w-full flex-wrap items-center gap-6 w600:gap-5 w400:gap-4">

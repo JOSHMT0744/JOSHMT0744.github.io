@@ -6,8 +6,32 @@ import { ThemeProvider } from '@/components/theme-provider'
 
 const archivo = Archivo({ subsets: ['latin'] })
 
+const baseUrl = 'https://josh-thompson.co.uk'
+
 export const metadata: Metadata = {
-  title: 'Josh Thompson',
+  metadataBase: new URL(baseUrl),
+  title: {
+    default: 'Josh Thompson',
+    template: '%s | Josh Thompson',
+  },
+  description:
+    'Personal portfolio of Josh Thompson — MSci Maths & Computer Science at Durham, interests in autonomous systems, RL, and AI. Projects, experience, and contact.',
+  keywords: ['Josh Thompson', 'portfolio', 'Durham University', 'Armature Labs', 'data science', 'machine learning'],
+  authors: [{ name: 'Josh Thompson', url: baseUrl }],
+  creator: 'Josh Thompson',
+  openGraph: {
+    type: 'website',
+    locale: 'en_GB',
+    url: baseUrl,
+    siteName: 'Josh Thompson',
+    title: 'Josh Thompson',
+    description: 'Personal portfolio — Maths & CS, autonomous systems, RL, AI. Projects and contact.',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Josh Thompson',
+    description: 'Personal portfolio — Maths & CS, autonomous systems, RL, AI.',
+  },
 }
 
 export default function RootLayout({
@@ -17,6 +41,10 @@ export default function RootLayout({
 }>) {
   return (
     <html suppressHydrationWarning lang="en">
+      <head>
+        <meta name="apple-mobile-web-app-title" content="About JT" />
+        <meta name="application-name" content="About JT" />
+      </head>
       <body className={archivo.className} suppressHydrationWarning>
         <ThemeProvider attribute="class" disableTransitionOnChange>
           <div className="outline-border rounded-base w-full max-w-[1000px] w600:grid-cols-[70px_minmax(0,1fr)] w500:grid-cols-1 grid h-[800px] max-h-[100dvh] min-h-0 grid-cols-[100px_minmax(0,1fr)] shadow-[10px_10px_0_0_#000] outline-4 portrait:h-[100dvh] portrait:max-h-[100dvh]">
